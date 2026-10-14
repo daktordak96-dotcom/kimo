@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- هدر نارنجی کارت -->
+        <TextView
+            android:id="@+id/txtPackageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EF6C00"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- قیمت آبی‌رنگ -->
+        <TextView
+            android:id="@+id/txtPackagePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="#E1F5FE"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"
+            android:textColor="#0288D1"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- توضیحات بسته -->
+        <TextView
+            android:id="@+id/txtPackageDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:textColor="#333333"
+            android:textSize="13sp" />
+
+        <!-- ردیف دکمه‌ها (ترتیب: فعال‌سازی راست، چک بیلانس وسط، غیرفعال‌سازی چپ) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="3">
+
+            <!-- دکمه غیرفعال‌سازی (قرمز - سمت چپ) -->
+            <Button
+                android:id="@+id/btnDeactivate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:backgroundTint="#D32F2F"
+                text="غیر فعال‌سازی"
+                android:text="غیر فعال‌سازی"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <!-- دکمه چک بیلانس (آبی - وسط) -->
+            <Button
+                android:id="@+id/btnCheck"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:backgroundTint="#00838F"
+                android:text="چک بیلانس"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+            <!-- دکمه فعال‌سازی (سبز - سمت راست) -->
+            <Button
+                android:id="@+id/btnActivate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="2dp"
+                android:backgroundTint="#388E3C"
+                android:text="فعال‌سازی"
+                android:textColor="#FFFFFF"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

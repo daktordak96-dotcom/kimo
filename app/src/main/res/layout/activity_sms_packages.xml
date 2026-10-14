@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- نوار تب‌ها (مشابه تصویر نمونه) -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/smsTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:tabIndicatorColor="#FF9800"
+        app:tabSelectedTextColor="#FF9800"
+        app:tabTextColor="#666666"
+        app:tabMode="scrollable" />
+
+    <!-- محتوای صفحات بر اساس تب انتخاب شده -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/smsViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

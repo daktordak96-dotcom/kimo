@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F7FA">
+
+    <!-- لیست کارت بسته‌ها (بدون هدر و تب‌های تکراری) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- کارت ۱: بسته ۵۵۰ ام بی هفتگی -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EF6C00"
+                        android:text="550 ام بی هفتگی"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="50 افغانی"
+                            android:textColor="#0288D1"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:background="#E1F5FE"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="بسته 550 ام بی اینترنت برای 7 روز به قیمت 50 افغانی. تمدید خودکار فعال.\nبرای فعال سازی 300 و برای غیرفعال سازی PU 300 را به 3378 ارسال نمائید.\nبرای بررسی موجودی 505 را به 606 ارسال نمائید."
+                            android:textColor="#2D3748"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btnActivate1"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:text="فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#2E7D32"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnCheck1"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="چک بیلانس"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#00838F"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnDeactivate1"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:text="غیر فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#C62828"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- کارت ۲: بسته 1.5 جی بی هفتگی -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EF6C00"
+                        android:text="1.5 جی بی هفتگی"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="99 افغانی"
+                            android:textColor="#0288D1"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:background="#E1F5FE"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="بسته 1.5 جی بی اینترنت برای 7 روز به قیمت 99 افغانی. تمدید خودکار فعال.\nبرای فعال سازی W99 و برای غیرفعال سازی PU W99 را به 3378 ارسال نمائید.\nبرای بررسی موجودی 505 را به 606 ارسال نمائید."
+                            android:textColor="#2D3748"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btnActivate2"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:text="فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#2E7D32"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnCheck2"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="چک بیلانس"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#00838F"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnDeactivate2"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:text="غیر فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#C62828"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- کارت ۳: بسته 1.8 جی بی هفتگی -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EF6C00"
+                        android:text="1.8 جی بی هفتگی"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="149 افغانی"
+                            android:textColor="#0288D1"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:background="#E1F5FE"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="بسته 1.8 جی بی اینترنت برای 7 روز به قیمت 149 افغانی. تمدید خودکار فعال.\nبرای فعال سازی 149 و برای غیرفعال سازی PU 149 را به 3378 ارسال نمائید.\nبرای بررسی موجودی 505 را به 606 ارسال نمائید."
+                            android:textColor="#2D3748"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btnActivate3"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:text="فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#2E7D32"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnCheck3"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="چک بیلانس"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#00838F"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnDeactivate3"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:text="غیر فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#C62828"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- کارت ۴: بسته 2 جی بی هفتگی (1 جی بی شبانه) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EF6C00"
+                        android:text="2 جی بی هفتگی (1 جی بی شبانه)"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="99 افغانی"
+                            android:textColor="#0288D1"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:background="#E1F5FE"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="بسته 2 جی بی اینترنت برای 7 روز به قیمت 99 افغانی. 1 جی بی قابل استفاده از 11 شب تا 7 صبح. تمدید خودکار فعال.\nبرای فعال سازی ND2 و برای غیرفعال سازی PU ND2 را به 3378 ارسال نمائید.\nبرای بررسی موجودی 505 را به 606 ارسال نمائید."
+                            android:textColor="#2D3748"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btnActivate4"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:text="فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#2E7D32"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnCheck4"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="چک بیلانس"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#00838F"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnDeactivate4"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:text="غیر فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#C62828"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- کارت ۵: بسته 3 جی بی هفتگی -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EF6C00"
+                        android:text="3 جی بی هفتگی"
+                        android:textColor="#FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="12dp"
+                        android:gravity="center" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="199 افغانی"
+                            android:textColor="#0288D1"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:background="#E1F5FE"
+                            android:paddingHorizontal="12dp"
+                            android:paddingVertical="4dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="بسته 3 جی بی اینترنت برای 7 روز به قیمت 199 افغانی. تمدید خودکار فعال.\nبرای فعال سازی W199 و برای غیرفعال سازی PU W199 را به 3378 ارسال نمائید.\nبرای بررسی موجودی 505 را به 606 ارسال نمائید."
+                            android:textColor="#2D3748"
+                            android:textSize="14sp"
+                            android:lineSpacingExtra="4dp"
+                            android:layout_marginBottom="16dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3">
+
+                            <Button
+                                android:id="@+id/btnActivate5"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginEnd="4dp"
+                                android:text="فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#2E7D32"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnCheck5"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginHorizontal="4dp"
+                                android:text="چک بیلانس"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#00838F"
+                                android:textSize="12sp" />
+
+                            <Button
+                                android:id="@+id/btnDeactivate5"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_weight="1"
+                                android:layout_marginStart="4dp"
+                                android:text="غیر فعال سازی"
+                                android:textColor="#FFFFFF"
+                                android:backgroundTint="#C62828"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kimo.mayapp">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- کد برنامه در AdMob (فعلاً کد تستی گوگل؛ بعداً کد واقعی جایگزین می‌شود) -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
+
+        <!-- راه‌انداز دستیار هوشمند (خودکار اجرا می‌شود) -->
+        <provider
+            android:name=".AssistantInit"
+            android:authorities="com.kimo.mayapp.assistantinit"
+            android:exported="false" />
+
+        <!-- صفحه اصلی برنامه -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- دستیار هوشمند آفلاین -->
+        <activity
+            android:name=".AssistantActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- انتخاب زبان در اولین ورود -->
+        <activity
+            android:name=".LanguageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- گالری خصوصی -->
+        <activity
+            android:name=".VaultActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+
+        <!-- فال حافظ -->
+        <activity
+            android:name=".HafezActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- صفحه جستجو -->
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- صفحه علاقه‌مندی‌ها -->
+        <activity
+            android:name=".FavoritesActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- کد کشورها -->
+        <activity
+            android:name=".CountryCodesActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی مشترک مدرن اپراتورها -->
+        <activity
+            android:name=".OperatorMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- خدمات اتصالات -->
+        <activity
+            android:name=".EtisalatServicesActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی اتصالات -->
+        <activity
+            android:name=".EtisalatMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی اتوما -->
+        <activity
+            android:name=".AtomaMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی روشن -->
+        <activity
+            android:name=".RoshanMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی افغان بیسیم -->
+        <activity
+            android:name=".AfghanMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی سلام -->
+        <activity
+            android:name=".SalaamMenuActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های اینترنت و پیام سلام -->
+        <activity
+            android:name=".SalaamInternetActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های اتصالات -->
+        <activity
+            android:name=".PackagesContainerActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های اینترنتی افغان بیسیم -->
+        <activity
+            android:name=".AfghanInternetActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های تماس افغان بیسیم -->
+        <activity
+            android:name=".AfghanCallActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های بین‌المللی افغان بیسیم -->
+        <activity
+            android:name=".AfghanIntlActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- خدمات افغان بیسیم -->
+        <activity
+            android:name=".AfghanServicesActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- بسته‌های روشن -->
+        <activity
+            android:name=".RoshanInternetActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- تب‌ها و جزئیات بسته‌های اتوما -->
+        <activity
+            android:name=".AtomaActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+
+        <!-- منوی سه‌خط (کشویی با پشت‌زمینهٔ شفاف) -->
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- سایر صفحات -->
+        <activity android:name=".AfghanSmsActivity" android:exported="false" />
+        <activity android:name=".SmsPackagesActivity" android:exported="false" />
+        <activity android:name=".CallPackagesActivity" android:exported="false" />
+        <activity android:name=".ServicesActivity" android:exported="false" />
+        <activity android:name=".InternationalPackagesActivity" android:exported="false" />
+        <activity android:name=".MonthlyPackagesActivity" android:exported="false" />
+        <activity android:name=".SettingsActivity" android:exported="false" />
+
+    </application>
+
+</manifest>

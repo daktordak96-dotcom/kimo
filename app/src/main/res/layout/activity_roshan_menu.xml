@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A0509">
+
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="#D32F2F"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:elevation="6dp">
+
+        <TextView
+            android:id="@+id/txtHeaderTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="روشن"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="start|center_vertical" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSmsPackages"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#2A0812">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:tint="#FFFFFF" android:src="@android:drawable/ic_dialog_email" />
+                    <TextView android:id="@+id/txtSmsPackages" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="بسته‌های پیام" android:textSize="14sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInternet"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#2A0812">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:tint="#FFFFFF" android:src="@android:drawable/ic_dialog_info" />
+                    <TextView android:id="@+id/txtInternetPackages" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="بسته‌های اینترنتی" android:textSize="14sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardServices"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#2A0812">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:tint="#FFFFFF" android:src="@android:drawable/ic_menu_manage" />
+                    <TextView android:id="@+id/txtServices" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="خدمات" android:textSize="14sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardCallPackages"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#2A0812">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:tint="#FFFFFF" android:src="@android:drawable/ic_menu_call" />
+                    <TextView android:id="@+id/txtCallPackages" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="بسته‌های تماس" android:textSize="14sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardInternationalPackages"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#2A0812">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+                    <ImageView android:layout_width="48dp" android:layout_height="48dp" android:tint="#FFFFFF" android:src="@android:drawable/ic_menu_compass" />
+                    <TextView android:id="@+id/txtInternationalPackages" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="بسته‌های بین المللی" android:textSize="14sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginTop="10dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+    </ScrollView>
+</LinearLayout>
