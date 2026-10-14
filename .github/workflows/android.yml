@@ -1,4 +1,4 @@
-name: Android AAB
+name: Android AAB and APK
 
 on:
   push:
@@ -14,8 +14,6 @@ jobs:
     env:
       KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
       KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-      KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-      KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
     steps:
       - uses: actions/checkout@v5
 
@@ -44,10 +42,16 @@ jobs:
           echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/upload.jks"
           echo "KEYSTORE_FILE=$RUNNER_TEMP/upload.jks" >> "$GITHUB_ENV"
 
-      - name: Build release AAB
+      - name: Build release AAB and APK
         run: |
           set -o pipefail
-          gradle bundleRelease --stacktrace 2>&1 | tee build.log
+          gradle bundleRelease assembleRelease --stacktrace 2>&1 | tee build.log
+
+      - name: Verify signing
+        run: |
+          APKSIGNER=$(ls $ANDROID_HOME/build-tools/36.0.0/apksigner)
+          $APKSIGNER verify --verbose --print-certs app/build/outputs/apk/release/app-release.apk
+          jarsigner -verify -verbose:summary app/build/outputs/bundle/release/app-release.aab
 
       - name: Show build errors
         if: failure()
@@ -58,15 +62,16 @@ jobs:
           echo "~~~" >> $GITHUB_STEP_SUMMARY
           grep "^e: " build.log | head -20 | while read -r l; do echo "::error::$l"; done || true
 
-      - name: Collect output
+      - name: Collect outputs
         run: |
           mkdir -p out
           cp app/build/outputs/bundle/release/app-release.aab out/kimo-release.aab
+          cp app/build/outputs/apk/release/app-release.apk out/kimo-release.apk
 
       - name: Publish to Releases
         uses: softprops/action-gh-release@v2
         with:
           tag_name: build-${{ github.run_number }}
           name: kimo build ${{ github.run_number }}
-          files: out/kimo-release.aab
+          files: out/*
           make_latest: true
