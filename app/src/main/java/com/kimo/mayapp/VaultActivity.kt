@@ -604,7 +604,7 @@ class VaultActivity : AppCompatActivity() {
                     card.layoutParams = card.layoutParams.apply { height = (h * f).toInt() }
                 }
                 addListener(object : android.animation.AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: android.animation.Animator?) {
+                    override fun onAnimationEnd(animation: android.animation.Animator) {
                         prefs.edit().putBoolean("warn_hidden", true).apply()
                         showGallery()
                     }
@@ -614,8 +614,8 @@ class VaultActivity : AppCompatActivity() {
         }
 
         card.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-            override fun onViewAttachedToWindow(v: View?) { spin.start(); pulse.start() }
-            override fun onViewDetachedFromWindow(v: View?) { spin.cancel(); pulse.cancel() }
+            override fun onViewAttachedToWindow(v: View) { spin.start(); pulse.start() }
+            override fun onViewDetachedFromWindow(v: View) { spin.cancel(); pulse.cancel() }
         })
 
         card.alpha = 0f
@@ -975,8 +975,8 @@ class VaultActivity : AppCompatActivity() {
 
         var barsVisible = true
         val gd = GestureDetector(this, object : GestureDetector.SimpleOnGestureListener() {
-            override fun onDown(e: MotionEvent?) = true
-            override fun onFling(e1: MotionEvent?, e2: MotionEvent?, vx: Float, vy: Float): Boolean {
+            override fun onDown(e: MotionEvent) = true
+            override fun onFling(e1: MotionEvent?, e2: MotionEvent, vx: Float, vy: Float): Boolean {
                 if (Math.abs(vx) > Math.abs(vy) && Math.abs(vx) > 600) {
                     if (vx < 0 && idx < list.size - 1) { idx++; load(1) }
                     else if (vx > 0 && idx > 0) { idx--; load(-1) }
@@ -984,12 +984,12 @@ class VaultActivity : AppCompatActivity() {
                 }
                 return false
             }
-            override fun onDoubleTap(e: MotionEvent?): Boolean {
+            override fun onDoubleTap(e: MotionEvent): Boolean {
                 val target = if (iv.scaleX > 1.1f) 1f else 2.2f
                 iv.animate().scaleX(target).scaleY(target).setDuration(220).start()
                 return true
             }
-            override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
+            override fun onSingleTapConfirmed(e: MotionEvent): Boolean {
                 barsVisible = !barsVisible
                 val a = if (barsVisible) 1f else 0f
                 topBar.animate().alpha(a).setDuration(200).start()

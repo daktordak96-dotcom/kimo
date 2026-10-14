@@ -106,8 +106,8 @@ object AssistantBubble : Application.ActivityLifecycleCallbacks {
             start()
         }
         box.addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-            override fun onViewAttachedToWindow(v: View?) {}
-            override fun onViewDetachedFromWindow(v: View?) { pulse.cancel() }
+            override fun onViewAttachedToWindow(v: View) {}
+            override fun onViewDetachedFromWindow(v: View) { pulse.cancel() }
         })
 
         // حباب گفتگو
