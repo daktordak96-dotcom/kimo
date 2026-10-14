@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kimo.mayapp">
+>
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".App"
+        android:enableOnBackInvokedCallback="false"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -183,6 +184,10 @@
         <activity android:name=".MonthlyPackagesActivity" android:exported="false" />
         <activity android:name=".SettingsActivity" android:exported="false" />
 
+        <provider
+            android:name=".EdgeToEdgeInit"
+            android:authorities="com.kimo.mayapp.edgetoedgeinit"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -21,10 +21,13 @@ import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdError
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import java.util.Locale
 import kotlin.random.Random
 
@@ -165,46 +168,57 @@ class HafezActivity : AppCompatActivity() {
     // ---------------- گرفتن فال: اول تبلیغ، بعد فال ----------------
     private fun onGetFal() {
         if (waitingForAd) return
-        val ad = interstitial
-        if (ad != null && ad.isLoaded) {
-            waitingForAd = true
-            ad.adListener = object : AdListener() {
-                override fun onAdClosed() {
-                    waitingForAd = false
-                    showFal()
-                    loadAd()
-                }
+        if (showAdThenFal()) return
+
+        // تبلیغ آماده نیست: کمی صبر و بعد فال بدون تبلیغ
+        showLoading()
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (isFinishing || isDestroyed) return@postDelayed
+            if (!showAdThenFal()) {
+                showFal()
+                loadAd()
             }
-            ad.show()
-        } else {
-            // تبلیغ آماده نیست: کمی صبر و بعد فال بدون تبلیغ
-            showLoading()
-            Handler(Looper.getMainLooper()).postDelayed({
-                val again = interstitial
-                if (again != null && again.isLoaded && !isFinishing) {
-                    waitingForAd = true
-                    again.adListener = object : AdListener() {
-                        override fun onAdClosed() {
-                            waitingForAd = false
-                            showFal()
-                            loadAd()
-                        }
-                    }
-                    again.show()
-                } else if (!isFinishing) {
-                    showFal()
-                    loadAd()
-                }
-            }, 1500)
+        }, 1500)
+    }
+
+    // اگر تبلیغ آماده باشد نشانش می‌دهد و بعد از بستنش فال را نمایش می‌دهد
+    private fun showAdThenFal(): Boolean {
+        val ad = interstitial ?: return false
+        interstitial = null
+        waitingForAd = true
+        ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                waitingForAd = false
+                showFal()
+                loadAd()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                waitingForAd = false
+                showFal()
+                loadAd()
+            }
         }
+        ad.show(this)
+        return true
     }
 
     private fun loadAd() {
         try {
-            val ad = InterstitialAd(this)
-            ad.adUnitId = INTERSTITIAL_ID
-            ad.loadAd(AdRequest.Builder().build())
-            interstitial = ad
+            InterstitialAd.load(
+                this,
+                INTERSTITIAL_ID,
+                AdRequest.Builder().build(),
+                object : InterstitialAdLoadCallback() {
+                    override fun onAdLoaded(ad: InterstitialAd) {
+                        interstitial = ad
+                    }
+
+                    override fun onAdFailedToLoad(error: LoadAdError) {
+                        interstitial = null
+                    }
+                }
+            )
         } catch (e: Exception) {
             interstitial = null
         }

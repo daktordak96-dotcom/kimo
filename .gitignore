@@ -9,3 +9,8 @@
 /build
 /captures
 .externalNativeBuild
+*.apk
+*.aab
+*.jks
+*.keystore
+keystore.properties
