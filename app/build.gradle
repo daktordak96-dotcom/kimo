@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+// کلید امضا فقط در GitHub (از Secrets) در دسترس است
+def ksFile = System.getenv("KEYSTORE_FILE")
+
 android {
     namespace "com.kimo.mayapp"
     compileSdk 36
@@ -9,16 +12,36 @@ android {
         applicationId "com.kimo.mayapp"
         minSdk 23
         targetSdk 36
-        versionCode 1
+        // هر بیلد GitHub یک عدد بالاتر می‌گیرد (لازمهٔ Google Play)
+        versionCode ((System.getenv("GITHUB_RUN_NUMBER") ?: "1") as Integer)
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            if (ksFile) {
+                storeFile file(ksFile)
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias "upload"
+                keyPassword System.getenv("KEYSTORE_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            if (ksFile) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled true
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 
     compileOptions {

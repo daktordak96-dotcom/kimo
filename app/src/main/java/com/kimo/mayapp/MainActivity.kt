@@ -117,9 +117,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installCrashCatcher()
+        if (BuildConfig.DEBUG) installCrashCatcher()
         setContentView(R.layout.activity_main)
-        showLastCrash()
+        if (BuildConfig.DEBUG) showLastCrash()
 
         shownLang = Strings.currentLang(this)
         lang = shownLang
