@@ -1,5 +1,7 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+plugins {
+    id 'com.android.application' version '8.7.1'
+    id 'org.jetbrains.kotlin.android' version '1.9.24'
+}
 
 // کلید امضا فقط در GitHub (از Secrets) در دسترس است
 def ksFile = System.getenv("KEYSTORE_FILE")
